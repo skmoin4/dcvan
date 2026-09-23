@@ -39,6 +39,30 @@ const Navbar = () => {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-slate-200/80 bg-white/90 shadow-soft backdrop-blur-lg' : 'border-b border-transparent bg-white/70 backdrop-blur-sm'}`}>
+      {!user && (
+        <div className="bg-navy-950">
+          <div className="section flex items-center justify-center gap-x-4 gap-y-1 py-2 sm:justify-between">
+            <span className="hidden items-center gap-1.5 text-xs font-semibold text-blue-100/60 sm:flex">
+              <PhoneIcon className="h-3.5 w-3.5 text-flame-400" /> Call us for quick booking
+            </span>
+            <div className="flex items-center gap-3 sm:gap-4">
+              {phoneNumbers.map((phone, index) => (
+                <React.Fragment key={phone.href}>
+                  {index > 0 && <span className="text-white/15">|</span>}
+                  <a
+                    href={phone.href}
+                    className="flex items-center gap-1.5 text-sm font-extrabold text-white transition hover:text-flame-400 sm:text-base"
+                  >
+                    <PhoneIcon className="h-4 w-4 text-flame-400" />
+                    {phone.display}
+                  </a>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="section flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           <Image
@@ -75,34 +99,9 @@ const Navbar = () => {
         )}
 
         {!user && (
-          <div className="flex items-center gap-2 md:gap-4">
-            <div className="hidden items-center gap-3 sm:flex">
-              <PhoneIcon className="h-4 w-4 text-flame-500" />
-              {phoneNumbers.map((phone, index) => (
-                <React.Fragment key={phone.href}>
-                  {index > 0 && <span className="text-slate-300">|</span>}
-                  <a href={phone.href} className="text-sm font-bold text-slate-600 transition hover:text-navy-900">
-                    {phone.display}
-                  </a>
-                </React.Fragment>
-              ))}
-            </div>
-            <div className="flex items-center gap-1.5 sm:hidden">
-              {phoneNumbers.map((phone) => (
-                <a
-                  key={phone.href}
-                  href={phone.href}
-                  aria-label={`Call ${phone.display}`}
-                  className="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-navy-900"
-                >
-                  <PhoneIcon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-            <Link href="/#enquiry" className="btn-primary btn-sm">
-              Book Now
-            </Link>
-          </div>
+          <Link href="/#enquiry" className="btn-primary btn-sm">
+            Book Now
+          </Link>
         )}
 
         {links.length > 0 && (

@@ -68,37 +68,58 @@ const EnquiryForm = ({ compact = false }) => {
           <h3 className="mt-1 text-xl font-black text-navy-900">Get a free service estimate</h3>
         </div>
       )}
-      <div className="space-y-3">
-        <input required className="input-field" name="customer_name" value={form.customer_name} onChange={update} placeholder="Your name" />
-        <input
-          required
-          className="input-field"
-          name="mobile_number"
-          value={form.mobile_number}
-          onChange={update}
-          placeholder="Mobile number"
-          pattern="[6-9][0-9]{9}"
-          maxLength={10}
-        />
-        <LocationPicker
-          onLocationSelect={handleLocationSelect}
-          initialLocation={
-            form.location ? { address: form.location, lat: form.location_lat, lng: form.location_lng } : null
-          }
-          placeholder="Click on map to select service location"
-          height={compact ? '260px' : '280px'}
-          showCoordinates={!compact}
-        />
-        <input type="hidden" name="location" value={form.location} />
+      <div className="space-y-5">
+        <div>
+          <label className="label" htmlFor="customer_name">Your name</label>
+          <input required id="customer_name" className="input-field" name="customer_name" value={form.customer_name} onChange={update} placeholder="e.g. Ramesh Kumar" />
+        </div>
 
-        <textarea
-          className="input-field min-h-16 resize-none"
-          name="problem_description"
-          value={form.problem_description}
-          onChange={update}
-          placeholder="Describe the issue: drainage blockage, septic tank cleaning, overflow, industrial waste, etc."
-        />
-        <input className="input-field" type="datetime-local" name="preferred_datetime" value={form.preferred_datetime} onChange={update} />
+        <div>
+          <label className="label" htmlFor="mobile_number">Mobile number</label>
+          <input
+            required
+            id="mobile_number"
+            className="input-field"
+            name="mobile_number"
+            value={form.mobile_number}
+            onChange={update}
+            placeholder="10-digit mobile number"
+            pattern="[6-9][0-9]{9}"
+            maxLength={10}
+          />
+        </div>
+
+        <div>
+          <label className="label">Service location</label>
+          <LocationPicker
+            onLocationSelect={handleLocationSelect}
+            initialLocation={
+              form.location ? { address: form.location, lat: form.location_lat, lng: form.location_lng } : null
+            }
+            placeholder="Click on map to select service location"
+            height={compact ? '260px' : '280px'}
+            showCoordinates={!compact}
+          />
+          <input type="hidden" name="location" value={form.location} />
+        </div>
+
+        <div>
+          <label className="label" htmlFor="problem_description">Describe the issue (optional)</label>
+          <textarea
+            id="problem_description"
+            className="input-field min-h-20 resize-none"
+            name="problem_description"
+            value={form.problem_description}
+            onChange={update}
+            placeholder="Drainage blockage, septic tank cleaning, overflow, industrial waste, etc."
+          />
+        </div>
+
+        <div>
+          <label className="label" htmlFor="preferred_datetime">Preferred date &amp; time (optional)</label>
+          <input id="preferred_datetime" className="input-field" type="datetime-local" name="preferred_datetime" value={form.preferred_datetime} onChange={update} />
+        </div>
+
         <button disabled={loading} className="btn-primary w-full">
           {loading ? 'Submitting...' : 'Request Cleaning Service'}
           {!loading && <ArrowRightIcon className="h-4 w-4" />}
