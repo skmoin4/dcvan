@@ -21,7 +21,7 @@ const Navbar = () => {
     { label: 'Enquiries', to: '/admin/enquiries' },
     { label: 'Tasks', to: '/admin/tasks' },
     { label: 'Fleet', to: '/admin/fleet' },
-    ...(user.role === 'admin' ? [{ label: 'Users', to: '/admin/users' }] : []),
+    ...(user.role === 'admin' ? [{ label: 'Users', to: '/admin/users' }, { label: 'Settings', to: '/admin/settings' }] : []),
   ] : [];
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
