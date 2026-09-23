@@ -14,6 +14,7 @@ import {
   WrenchScrewdriverIcon,
   PlayIcon,
 } from '@heroicons/react/24/outline';
+import BookingLink from '../components/common/BookingLink';
 import EnquiryForm from '../components/common/EnquiryForm';
 import HeroVideo from '../components/common/HeroVideo';
 import MobileBookingBar from '../components/common/MobileBookingBar';
@@ -114,9 +115,9 @@ const Home = () => {
               Book expert drainage cleaning, septic tank emptying, sewer line support, and industrial cleaning with a team that coordinates quickly and works neatly on site.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#enquiry" className="btn-primary">
+              <BookingLink href="#enquiry" className="btn-primary">
                 Book Service <ArrowRightIcon className="h-4 w-4" />
-              </a>
+              </BookingLink>
               {phoneNumbers.map((phone) => (
                 <a key={phone.href} href={phone.href} className="btn-ghost-light">
                   <PhoneIcon className="h-4 w-4" /> {phone.display}
@@ -298,9 +299,9 @@ const Home = () => {
               <p className="eyebrow">More field work</p>
               <h2 className="mt-2 text-3xl font-black text-navy-900">Equipment, vans, and cleaning activity on site.</h2>
             </div>
-            <a href="#enquiry" className="btn-secondary w-fit">
+            <BookingLink href="#enquiry" className="btn-secondary w-fit">
               Enquire now <ArrowRightIcon className="h-4 w-4" />
-            </a>
+            </BookingLink>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {videos.slice(6).map((src, index) => (
@@ -319,7 +320,7 @@ const Home = () => {
             <p className="mt-2 text-orange-50/90">Send an enquiry now and our team will call back for service confirmation.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a href="#enquiry" className="rounded-xl bg-white px-6 py-3 font-black text-navy-900 shadow-lift transition hover:-translate-y-0.5 hover:bg-orange-50">Book Now</a>
+            <BookingLink href="#enquiry" className="rounded-xl bg-white px-6 py-3 font-black text-navy-900 shadow-lift transition hover:-translate-y-0.5 hover:bg-orange-50">Book Now</BookingLink>
             {phoneNumbers.map((phone) => (
               <a key={phone.href} href={phone.href} className="btn-ghost-light">Call {phone.display}</a>
             ))}

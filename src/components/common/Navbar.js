@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { Bars3Icon, XMarkIcon, ArrowRightOnRectangleIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../context/AuthContext';
 import { phoneNumbers } from '../../config/contact';
+import BookingLink from './BookingLink';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -99,9 +100,9 @@ const Navbar = () => {
         )}
 
         {!user && (
-          <Link href="/#enquiry" className="btn-primary btn-sm">
+          <BookingLink href="/#enquiry" className="btn-primary btn-sm">
             Book Now
-          </Link>
+          </BookingLink>
         )}
 
         {links.length > 0 && (
