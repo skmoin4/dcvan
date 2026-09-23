@@ -2,7 +2,7 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import '../src/index.css';
 import AppShell from '../src/components/common/AppShell';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://swarajin.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.swarajin.com';
 
 const title = 'Swaraj Infra Services | Drainage, Septic Tank & Industrial Cleaning';
 const description = 'Book professional drainage cleaning, septic tank cleaning, suction van, and industrial cleaning services with Swaraj Infra Services. Fast callback, trained field teams, 24/7 emergency response.';

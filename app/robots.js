@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://swarajin.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.swarajin.com';
 
 export default function robots() {
   return {
