@@ -76,16 +76,29 @@ const Navbar = () => {
 
         {!user && (
           <div className="flex items-center gap-2 md:gap-4">
-            <a
-              href={phoneNumbers[0].href}
-              className="hidden items-center gap-1.5 text-sm font-bold text-slate-600 transition hover:text-navy-900 sm:flex"
-            >
+            <div className="hidden items-center gap-3 sm:flex">
               <PhoneIcon className="h-4 w-4 text-flame-500" />
-              {phoneNumbers[0].display}
-            </a>
-            <a href={phoneNumbers[0].href} className="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-navy-900 sm:hidden" aria-label="Call now">
-              <PhoneIcon className="h-4 w-4" />
-            </a>
+              {phoneNumbers.map((phone, index) => (
+                <React.Fragment key={phone.href}>
+                  {index > 0 && <span className="text-slate-300">|</span>}
+                  <a href={phone.href} className="text-sm font-bold text-slate-600 transition hover:text-navy-900">
+                    {phone.display}
+                  </a>
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="flex items-center gap-1.5 sm:hidden">
+              {phoneNumbers.map((phone) => (
+                <a
+                  key={phone.href}
+                  href={phone.href}
+                  aria-label={`Call ${phone.display}`}
+                  className="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-navy-900"
+                >
+                  <PhoneIcon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
             <Link href="/#enquiry" className="btn-primary btn-sm">
               Book Now
             </Link>
