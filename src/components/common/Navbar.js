@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Bars3Icon, XMarkIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, ArrowRightOnRectangleIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../context/AuthContext';
+import { phoneNumbers } from '../../config/contact';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -70,6 +71,24 @@ const Navbar = () => {
             <button onClick={handleLogout} className="btn-outline btn-sm">
               <ArrowRightOnRectangleIcon className="h-4 w-4" /> Logout
             </button>
+          </div>
+        )}
+
+        {!user && (
+          <div className="flex items-center gap-2 md:gap-4">
+            <a
+              href={phoneNumbers[0].href}
+              className="hidden items-center gap-1.5 text-sm font-bold text-slate-600 transition hover:text-navy-900 sm:flex"
+            >
+              <PhoneIcon className="h-4 w-4 text-flame-500" />
+              {phoneNumbers[0].display}
+            </a>
+            <a href={phoneNumbers[0].href} className="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-navy-900 sm:hidden" aria-label="Call now">
+              <PhoneIcon className="h-4 w-4" />
+            </a>
+            <Link href="/#enquiry" className="btn-primary btn-sm">
+              Book Now
+            </Link>
           </div>
         )}
 

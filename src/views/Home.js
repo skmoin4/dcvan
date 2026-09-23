@@ -17,6 +17,7 @@ import {
 import EnquiryForm from '../components/common/EnquiryForm';
 import HeroVideo from '../components/common/HeroVideo';
 import MobileBookingBar from '../components/common/MobileBookingBar';
+import { phoneNumbers } from '../config/contact';
 
 const videoIds = ['IMG_8518', 'IMG_8519', 'IMG_8520', 'IMG_8521', 'IMG_8522', 'IMG_8523', 'IMG_8525', 'IMG_8526'];
 const videos = videoIds.map((id) => `/brand-assets/optimized/${id}.mp4`);
@@ -64,11 +65,6 @@ const trustPoints = [
   'Modern suction vans and trained cleaning operators',
   'Transparent booking flow with quick customer callback',
   'Suitable for routine maintenance and urgent overflow calls',
-];
-
-const phoneNumbers = [
-  { display: '98237 03702', href: 'tel:+919823703702' },
-  { display: '96577 03702', href: 'tel:+919657703702' },
 ];
 
 const VideoTile = ({ src, poster, index }) => (

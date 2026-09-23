@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { PhoneIcon, EnvelopeIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { phoneNumbers } from '../../config/contact';
 
 const services = ['Septic tank cleaning', 'Drainage blockage removal', 'Industrial cleaning', 'Sewage suction van service', 'High pressure jetting'];
 
@@ -22,7 +23,7 @@ const Footer = () => {
             Professional drainage cleaning, septic tank cleaning, suction van, and industrial cleaning service for homes, societies, shops, and worksites.
           </p>
           <div className="mt-6 flex gap-3">
-            <a href="tel:+919823703702" className="btn-ghost-light btn-sm">
+            <a href={phoneNumbers[0].href} className="btn-ghost-light btn-sm">
               <PhoneIcon className="h-4 w-4" /> Call Now
             </a>
           </div>
@@ -43,16 +44,13 @@ const Footer = () => {
         <div>
           <h3 className="text-sm font-black uppercase tracking-wide text-white">Contact</h3>
           <ul className="mt-4 space-y-3 text-sm">
-            <li>
-              <a className="flex items-center gap-3 text-blue-100/80 transition hover:text-white" href="tel:+919823703702">
-                <PhoneIcon className="h-4 w-4 shrink-0 text-flame-400" /> 98237 03702
-              </a>
-            </li>
-            <li>
-              <a className="flex items-center gap-3 text-blue-100/80 transition hover:text-white" href="tel:+919657703702">
-                <PhoneIcon className="h-4 w-4 shrink-0 text-flame-400" /> 96577 03702
-              </a>
-            </li>
+            {phoneNumbers.map((phone) => (
+              <li key={phone.href}>
+                <a className="flex items-center gap-3 text-blue-100/80 transition hover:text-white" href={phone.href}>
+                  <PhoneIcon className="h-4 w-4 shrink-0 text-flame-400" /> {phone.display}
+                </a>
+              </li>
+            ))}
             <li>
               <a className="flex items-center gap-3 text-blue-100/80 transition hover:text-white" href="mailto:operations@sewagecleanpro.com">
                 <EnvelopeIcon className="h-4 w-4 shrink-0 text-flame-400" /> operations@sewagecleanpro.com
