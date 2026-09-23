@@ -60,12 +60,14 @@ const EnquiryForm = ({ compact = false }) => {
   };
 
   return (
-    <form onSubmit={submit} className={`rounded-2xl bg-white p-5 shadow-lift ${compact ? '' : 'sm:p-6'}`}>
+    <form onSubmit={submit} className={compact ? '' : 'rounded-2xl bg-white p-5 shadow-lift sm:p-6'}>
       <input type="text" name="website" value={form.website} onChange={update} className="hidden" tabIndex="-1" autoComplete="off" />
-      <div className="mb-4">
-        <p className="eyebrow">Request a callback</p>
-        <h3 className="mt-1 text-xl font-black text-navy-900">Get a free service estimate</h3>
-      </div>
+      {!compact && (
+        <div className="mb-4">
+          <p className="eyebrow">Request a callback</p>
+          <h3 className="mt-1 text-xl font-black text-navy-900">Get a free service estimate</h3>
+        </div>
+      )}
       <div className="space-y-3">
         <input required className="input-field" name="customer_name" value={form.customer_name} onChange={update} placeholder="Your name" />
         <input

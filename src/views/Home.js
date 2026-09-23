@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import EnquiryForm from '../components/common/EnquiryForm';
 import HeroVideo from '../components/common/HeroVideo';
+import MobileBookingBar from '../components/common/MobileBookingBar';
 
 const videoIds = ['IMG_8518', 'IMG_8519', 'IMG_8520', 'IMG_8521', 'IMG_8522', 'IMG_8523', 'IMG_8525', 'IMG_8526'];
 const videos = videoIds.map((id) => `/brand-assets/optimized/${id}.mp4`);
@@ -331,14 +332,7 @@ const Home = () => {
       </section>
 
       {/* Mobile sticky CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur lg:hidden">
-        <details>
-          <summary className="cursor-pointer list-none rounded-xl bg-flame-500 px-4 py-3 text-center font-black text-white shadow-glow">Book Cleaning Service</summary>
-          <div className="mt-3 max-h-[70vh] overflow-y-auto">
-            <EnquiryForm compact />
-          </div>
-        </details>
-      </div>
+      <MobileBookingBar phoneNumbers={phoneNumbers} />
     </div>
   );
 };
