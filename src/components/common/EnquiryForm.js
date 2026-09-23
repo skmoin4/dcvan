@@ -14,7 +14,6 @@ const initialForm = {
   location_lat: null,
   location_lng: null,
   problem_description: '',
-  preferred_datetime: '',
   website: '',
 };
 
@@ -113,11 +112,6 @@ const EnquiryForm = ({ compact = false }) => {
             onChange={update}
             placeholder="Drainage blockage, septic tank cleaning, overflow, industrial waste, etc."
           />
-        </div>
-
-        <div>
-          <label className="label" htmlFor="preferred_datetime">Preferred date &amp; time (optional)</label>
-          <input id="preferred_datetime" className="input-field" type="datetime-local" name="preferred_datetime" value={form.preferred_datetime} onChange={update} />
         </div>
 
         <button disabled={loading} className="btn-primary w-full">
