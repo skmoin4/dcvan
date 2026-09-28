@@ -52,8 +52,8 @@ const Footer = () => {
               </li>
             ))}
             <li>
-              <a className="flex items-center gap-3 text-blue-100/80 transition hover:text-white" href="mailto:operations@sewagecleanpro.com">
-                <EnvelopeIcon className="h-4 w-4 shrink-0 text-flame-400" /> operations@sewagecleanpro.com
+              <a className="flex items-center gap-3 text-blue-100/80 transition hover:text-white" href="mailto:swarajinfraservices@gmail.com">
+                <EnvelopeIcon className="h-4 w-4 shrink-0 text-flame-400" /> swarajinfraservices@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-3 text-blue-100/80">
