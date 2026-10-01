@@ -65,9 +65,9 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-white/10 text-white transition hover:bg-flame-500"
+                className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#1877F2] text-white shadow-sm transition hover:scale-110 hover:bg-[#1465d8]"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
                   <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.46 1.49-1.46H16.5V4.36c-.26-.03-1.16-.11-2.2-.11-2.18 0-3.67 1.33-3.67 3.77V10.5H8v3h2.63V21h2.87z" />
                 </svg>
               </a>
