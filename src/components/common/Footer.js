@@ -22,9 +22,20 @@ const Footer = () => {
           <p className="mt-5 max-w-md text-sm leading-7 text-blue-100/70">
             Professional drainage cleaning, septic tank cleaning, suction van, and industrial cleaning service for homes, societies, shops, and worksites.
           </p>
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex items-center gap-3">
             <a href={phoneNumbers[0].href} className="btn-ghost-light btn-sm">
               <PhoneIcon className="h-4 w-4" /> Call Now
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61594654004600"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+              className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/10 text-white transition hover:bg-flame-500"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.46 1.49-1.46H16.5V4.36c-.26-.03-1.16-.11-2.2-.11-2.18 0-3.67 1.33-3.67 3.77V10.5H8v3h2.63V21h2.87z" />
+              </svg>
             </a>
           </div>
         </div>
