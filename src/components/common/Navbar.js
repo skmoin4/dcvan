@@ -59,6 +59,18 @@ const Navbar = () => {
                   </a>
                 </React.Fragment>
               ))}
+              <span className="text-white/15">|</span>
+              <a
+                href="https://www.facebook.com/profile.php?id=61594654004600"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Facebook"
+                className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-white/10 text-white transition hover:bg-flame-500"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                  <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.46 1.49-1.46H16.5V4.36c-.26-.03-1.16-.11-2.2-.11-2.18 0-3.67 1.33-3.67 3.77V10.5H8v3h2.63V21h2.87z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
